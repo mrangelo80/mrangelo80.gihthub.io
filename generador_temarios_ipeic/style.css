@@ -1,0 +1,257 @@
+:root {
+    /* Define variables for IPEIC colors */
+    --ipeic-blue: #0056b3; /* A shade of blue from original headers */
+    --ipeic-gold: #FFD700; /* Gold color */
+    --ipeic-darkblue: #003366; /* Darker blue for accents */
+    --text-color: #333;
+    --background-color: #f8f9fa; /* Light grey/blue tint */
+    --card-background: #fff;
+    --border-color: #dee2e6;
+    --button-primary: var(--ipeic-blue);
+    --button-secondary: #6c757d; /* Grey, could use IPEIC gold/darkblue too */
+    --button-text: white;
+    --button-hover: var(--ipeic-darkblue);
+    --button-secondary-hover: #5a6268;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Use a common system font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0; /* Remove body padding */
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 960px; /* Slightly wider container */
+    margin: 20px auto; /* Add margin top/bottom */
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+}
+
+/* Header Styling */
+.site-header, .page-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.site-header .logo {
+    max-width: 150px; /* Size for landing page logo */
+    margin-bottom: 15px;
+}
+
+.page-header .logo {
+    max-width: 80px; /* Smaller size for internal pages */
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.site-header h1, .page-header h1 {
+    color: var(--ipeic-darkblue);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.site-header p, .page-header p {
+    color: #555;
+    font-size: 1.1em;
+}
+
+.page-header nav {
+    margin-top: 15px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--ipeic-blue);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--ipeic-darkblue);
+    text-decoration: underline;
+}
+
+
+/* Section Styling */
+section {
+    margin-bottom: 40px; /* More space between sections */
+    padding-bottom: 30px;
+    border-bottom: 1px dashed var(--border-color); /* Dashed border for sections */
+}
+
+section:last-child {
+    border-bottom: none; /* No border for the last section */
+    margin-bottom: 0;
+}
+
+h2 {
+    color: var(--ipeic-blue);
+    border-bottom: 2px solid var(--ipeic-gold); /* Gold underline for h2 */
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add space below h2 */
+}
+
+h3 {
+    color: var(--ipeic-darkblue);
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px; /* More space between form groups */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px; /* More space below labels */
+    font-weight: bold;
+    color: var(--ipeic-darkblue);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea {
+    width: calc(100% - 22px); /* Adjust width for padding and border */
+    padding: 11px; /* Slightly more padding */
+    border: 1px solid var(--border-color);
+    border-radius: 5px; /* More rounded corners */
+    box-sizing: border-box;
+    font-size: 1em; /* Standard font size */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    border-color: var(--ipeic-blue);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Blue shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-helper-text {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: -10px; /* Pull helper text closer to the element it describes */
+    margin-bottom: 15px;
+}
+
+.security-warning {
+    color: #dc3545; /* Red color for warnings */
+    font-weight: bold;
+}
+
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 25px; /* More padding for buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none; /* Remove underline for links used as buttons */
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    margin-right: 10px; /* Space between buttons */
+    margin-top: 15px;
+}
+
+.primary-btn {
+    background-color: var(--button-primary);
+    color: var(--button-text);
+}
+
+.primary-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.secondary-btn {
+    background-color: var(--button-secondary);
+    color: var(--button-text);
+}
+
+.secondary-btn:hover {
+    background-color: var(--button-secondary-hover);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.option-buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.option-buttons .btn {
+    margin: 10px; /* Space around buttons in landing page */
+}
+
+
+/* AI Output Section */
+#ai-generator-section {
+    background-color: #e9ecef; /* Light background for generator section */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    border: 1px solid #ced4da;
+}
+
+#ai-output {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+#ai-output h3 {
+    margin-top: 0;
+    color: var(--ipeic-blue);
+    border-bottom: 1px dotted var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+#ai-result-text {
+    white-space: pre-wrap; /* Preserve line breaks from AI */
+    word-wrap: break-word; /* Prevent overflow */
+    color: #333;
+}
+
+.loading {
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Footer Styling */
+.site-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid var(--border-color);
+    font-size: 0.9em;
+    color: #555;
+}
+
+.site-footer p {
+    margin: 5px 0;
