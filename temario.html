@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Temario - IPEIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <img src="ipeic-logo.png" alt="IPEIC Logo" class="logo logo-small"> <!-- Asegúrate de tener esta imagen o actualiza la ruta -->
+            <h1>Generador de Temario</h1>
+            <nav>
+                 <a href="index.html" class="back-link">← Volver al inicio</a>
+            </nav>
+        </header>
+
+
+        <section id="temario-section" class="document-form-section">
+            <h2>Detalles del Temario</h2>
+            <p class="form-helper-text">Completa los campos principales. Luego, usa el generador con IA para obtener sugerencias y guardarlas en un documento de Google Docs.</p>
+            <form id="temario-form">
+                <div class="form-group">
+                    <label for="asignatura">Nombre de la Asignatura:</label>
+                    <input type="text" id="asignatura" value="MANEJO DE LAS TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN" required>
+                </div>
+                <div class="form-group">
+                    <label for="docente">Nombre del Docente:</label>
+                    <input type="text" id="docente" value="LUIS ÁNGEL ESTRADA BARRERA" required>
+                </div>
+                <div class="form-group">
+                    <label for="clave">Clave:</label>
+                    <input type="text" id="clave" value="LTM8-1D">
+                </div>
+                <div class="form-group">
+                    <label for="carrera">Curso o Carrera:</label>
+                    <input type="text" id="carrera" required>
+                </div>
+
+                <h3>Objetivos Generales</h3>
+                <div class="form-group">
+                    <textarea id="objetivos-generales" rows="4" required>Desarrollar en los estudiantes las competencias necesarias para utilizar de manera eficiente y ética las tecnologías de información y comunicación, promoviendo su capacidad para resolver problemas, gestionar información y comunicarse efectivamente en diversos contextos.</textarea>
+                </div>
+
+                <h3>Temas y Subtemas</h3>
+                <p class="form-helper-text">Define la estructura del contenido. El generador con IA puede sugerir contenido para esta sección.</p>
+                <div class="form-group">
+                     <textarea id="temario-estructura-temas" rows="8" placeholder="Ejemplo:
+Unidad 1: Introducción a las TIC
+ 1.1 Definición y evolución...
+ 1.2 Hardware, software...
+Unidad 2: Herramientas de Ofimática
+ 2.1 Procesadores de texto...
+ 2.2 Hojas de cálculo...
+...">Unidad 1: Introducción a las TIC
+1.1 Definición y evolución de las TIC.
+1.2 Hardware, software y redes.
+1.3 Influencia de las TIC en la sociedad y la economía.
+Unidad 2: Herramientas de Ofimática
+2.1 Procesadores de texto: Uso y funciones básicas.
+2.2 Hojas de cálculo: Creación y manejo de datos.
+2.3 Presentaciones: Diseño y elaboración de presentaciones efectivas.
+Unidad 3: Internet y Redes Sociales
+3.1 Navegación web: Uso de navegadores y motores de búsqueda.
+3.2 Correo electrónico: Configuración y uso.
+3.3 Redes sociales: Impacto y manejo seguro.
+Unidad 4: Seguridad Informática
+4.1 Conceptos básicos: Amenazas y vulnerabilidades.
+4.2 Medidas de protección: Antivirus, firewalls y buenas prácticas.
+4.3 Privacidad en línea: Protección de datos personales.</textarea>
+                </div>
+
+
+                <h3>Criterios de Evaluación</h3>
+                 <p class="form-helper-text">Define cómo se evaluará el curso. El generador con IA puede sugerir componentes y ponderaciones.</p>
+                 <div class="form-group">
+                    <textarea id="criterios-evaluacion" rows="5" required>Examen: 25%
+Asistencia: 20%
+Trabajos: 25%
+Trabajo final: 30%</textarea>
+                </div>
+
+
+                <h3>Bibliografía</h3>
+                 <p class="form-helper-text">Lista las referencias y recursos. El generador con IA puede sugerir referencias.</p>
+                 <div class="form-group">
+                    <textarea id="bibliografia" rows="5" placeholder="Ejemplo:
+1. Autor, A. (Año). Título...
+2. Enlace. (Año)...">1. Graells, P. (2000). Tecnologías de la información y comunicación: Un enfoque práctico. Editorial XYZ.
+2. Thompson, A., & Strickland, B. (2004). El impacto de las TIC en la economía global. Editorial ABC.
+3. Ikusi. (2023). Tecnologías de la información y comunicación: La guía definitiva. Recuperado
+de https://www.ikusi.com/mx/blog/tecnologias-de-la-informacion-y-comunicacion-la-guia-definitiva/.
+4. Utel. (2023). Administración de las tecnologías de la información y la comunicación. Recuperado
+de https://utel.mx/blog/10-consejos-para/tecnologias-de-la-informacion-y-la-comunicacion/³.</textarea>
+                </div>
+            </form>
+        </section>
+
+        <section id="ai-generator-section">
+            <h2>Generador de Contenido con IA y Guardado en Google Docs</h2>
+             <p class="form-helper-text">Usa la IA para sugerir contenido para el Temario y guardar el resultado en un documento de Google Docs.</p>
+            <!-- El campo de API key y la advertencia de seguridad se eliminan de aquí -->
+
+            <div class="form-group">
+                <label for="ai-prompt">Indicación Adicional para la IA (Opcional):</label>
+                <textarea id="ai-prompt" rows="4" placeholder="Ejemplo: Enfócate en la aplicación práctica. O: Sugiere bibliografía reciente."></textarea>
+                 <p class="form-helper-text">Si dejas este campo vacío, la IA generará contenido basado en los detalles del Temario que llenaste arriba.</p>
+            </div>
+
+            <button id="generate-btn" class="btn primary-btn">Generar y Guardar en Docs</button>
+
+            <div class="loading" id="loading-indicator" style="display: none;">Cargando...</div>
+
+            <!-- Nuevos divs para mensajes de estado y enlace de Docs -->
+            <div id="status-message" class="status-message" style="display: none;"></div>
+            <div id="docs-link-output" class="output-box docs-link-output" style="display: none;">
+                <h3>Documento Generado en Google Docs:</h3>
+                <p><a id="generated-docs-link" href="#" target="_blank">Abrir documento</a></p>
+            </div>
+            <!-- Fin de nuevos divs -->
+
+            <!-- La sección de resultado crudo de la IA se mantiene en HTML pero se oculta por defecto con script.js -->
+            <div id="ai-output" class="output-box" style="display: none;">
+                <h3>Resultado Crudo de la IA (solo para depuración si es necesario):</h3>
+                <p id="ai-result-text"></p>
+                 <!-- La lógica de copiar para este output crudo también se maneja en script.js y estará oculta -->
+                 <button id="copy-output-btn" class="btn secondary-btn" style="display: none;">Copiar Texto Generado</button>
+            </div>
+
+
+        </section>
+
+         <footer class="site-footer">
+             <p>"Podemos cambiar completamente nuestra vida y la actitud de la gente que nos rodea, con solo cambiar nosotros mismos."</p>
+             <p>© CENTRO UNIVERSITARIO IPEIC - LA EXCELENCIA ACADÉMICA</p>
+         </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

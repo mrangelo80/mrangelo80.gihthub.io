@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Secuencia Didáctica - IPEIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+         <header class="page-header">
+            <img src="ipeic-logo.png" alt="IPEIC Logo" class="logo logo-small"> <!-- Asegúrate de tener esta imagen o actualiza la ruta -->
+            <h1>Generador de Secuencia Didáctica</h1>
+             <nav>
+                 <a href="index.html" class="back-link">← Volver al inicio</a>
+            </nav>
+        </header>
+
+        <section id="secuencia-section" class="document-form-section">
+            <h2>Detalles de la Secuencia (por Unidad)</h2>
+             <p class="form-helper-text">Completa la información específica de la unidad. Luego, usa el generador con IA para obtener ideas y guardarlas en un documento de Google Docs.</p>
+            <form id="secuencia-form">
+                 <div class="form-group">
+                    <label for="unidad-numero">Unidad #:</label>
+                    <input type="number" id="unidad-numero" value="1" required>
+                </div>
+                 <div class="form-group">
+                    <label for="unidad-tema">Unidad Temática/Aprendizaje:</label>
+                    <input type="text" id="unidad-tema" value="Introducción a las TIC" required>
+                </div>
+                <!-- Opcional: Podrías añadir aquí un campo para el nombre de la asignatura si quieres que la IA lo use -->
+                <!-- <div class="form-group">
+                    <label for="asignatura">Asignatura (para contexto):</label>
+                    <input type="text" id="asignatura" placeholder="Ej: Manejo de TIC">
+                </div> -->
+
+                 <div class="form-group">
+                    <label for="secuencia-detalles">Planificación de la Secuencia para esta Unidad:</label>
+                    <textarea id="secuencia-detalles" rows="12" placeholder="Describe la apertura, desarrollo y cierre.
+Ejemplo:
+Apertura: Activar conocimientos previos sobre computadoras.
+Desarrollo: Explicar hardware/software, ver videos de evolución. Actividades: Lluvia de ideas sobre impacto.
+Cierre: Crear mapa mental de conceptos clave.
+Evaluación: Reporte individual del mapa mental (Formativa, Heteroevaluación)."></textarea>
+                 <p class="form-helper-text">Este campo se llenará automáticamente con ideas de la IA. Puedes editarlo después.</p>
+                </div>
+                 <!-- Podrías añadir campos más estructurados aquí si quisieras, pero la textarea da flexibilidad -->
+            </form>
+        </section>
+
+        <section id="ai-generator-section">
+             <h2>Generador de Ideas con IA y Guardado en Google Docs</h2>
+             <p class="form-helper-text">Usa la IA para sugerir ideas para la Secuencia Didáctica de esta unidad y guardar el resultado en un documento de Google Docs.</p>
+            <!-- El campo de API key y la advertencia de seguridad se eliminan de aquí -->
+
+            <div class="form-group">
+                <label for="ai-prompt">Indicación Adicional para la IA (Opcional):</label>
+                <textarea id="ai-prompt" rows="4" placeholder="Ejemplo: Incluye actividades colaborativas. O: Sugiere recursos interactivos."></textarea>
+                <p class="form-helper-text">Si dejas este campo vacío, la IA generará ideas basadas en el Tema de la Unidad.</p>
+            </div>
+
+            <button id="generate-btn" class="btn primary-btn">Generar y Guardar en Docs</button>
+
+            <div class="loading" id="loading-indicator" style="display: none;">Cargando...</div>
+
+            <!-- Nuevos divs para mensajes de estado y enlace de Docs -->
+            <div id="status-message" class="status-message" style="display: none;"></div>
+            <div id="docs-link-output" class="output-box docs-link-output" style="display: none;">
+                <h3>Documento Generado en Google Docs:</h3>
+                <p><a id="generated-docs-link" href="#" target="_blank">Abrir documento</a></p>
+            </div>
+            <!-- Fin de nuevos divs -->
+
+            <!-- La sección de resultado crudo de la IA se mantiene en HTML pero se oculta por defecto con script.js -->
+             <div id="ai-output" class="output-box" style="display: none;">
+                 <h3>Resultado Crudo de la IA (solo para depuración si es necesario):</h3>
+                 <p id="ai-result-text"></p>
+                 <!-- La lógica de copiar para este output crudo también se maneja en script.js y estará oculta -->
+                  <button id="copy-output-btn" class="btn secondary-btn" style="display: none;">Copiar Texto Generado</button>
+             </div>
+
+
+        </section>
+
+        <footer class="site-footer">
+             <p>"Podemos cambiar completamente nuestra vida y la actitud de la gente que nos rodea, con solo cambiar nosotros mismos."</p>
+             <p>© CENTRO UNIVERSITARIO IPEIC - LA EXCELENCIA ACADÉMICA</p>
+         </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
